@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="Scripting and content">
+        <SwitchPreferenceCompat
+            app:key="js"
+            app:defaultValue="true"
+            app:title="Allow JavaScript"
+            app:summary="Turn off to block all scripts (many sites will break)" />
+        <SwitchPreferenceCompat
+            app:key="block_popups"
+            app:defaultValue="true"
+            app:title="Block pop-up windows" />
+        <SwitchPreferenceCompat
+            app:key="block_geo"
+            app:defaultValue="true"
+            app:title="Block location access"
+            app:summary="Camera and microphone requests are always denied" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Cookies and storage">
+        <SwitchPreferenceCompat
+            app:key="block_cookies"
+            app:defaultValue="false"
+            app:title="Block all cookies" />
+        <SwitchPreferenceCompat
+            app:key="block_3p_cookies"
+            app:defaultValue="true"
+            app:title="Block third-party cookies" />
+        <SwitchPreferenceCompat
+            app:key="no_cache"
+            app:defaultValue="true"
+            app:title="Disable cache" />
+        <SwitchPreferenceCompat
+            app:key="private_mode"
+            app:defaultValue="true"
+            app:title="Wipe everything when the app closes"
+            app:summary="Clears cookies, storage, cache and history on exit" />
+        <Preference
+            app:key="clear_now"
+            app:title="Clear all browsing data now" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Network">
+        <SwitchPreferenceCompat
+            app:key="force_https"
+            app:defaultValue="true"
+            app:title="Force HTTPS"
+            app:summary="Upgrade http:// links to https://" />
+        <SwitchPreferenceCompat
+            app:key="block_3p_requests"
+            app:defaultValue="false"
+            app:title="Block third-party requests"
+            app:summary="Only load resources from the site you are on (approximate; may break sites)" />
+        <SwitchPreferenceCompat
+            app:key="send_gpc"
+            app:defaultValue="true"
+            app:title="Send Do Not Track and Global Privacy Control" />
+        <EditTextPreference
+            app:key="blocklist"
+            app:defaultValue=""
+            app:title="Blocked domains"
+            app:dialogMessage="Separate with spaces, commas or new lines. Subdomains are blocked too."
+            app:useSimpleSummaryProvider="true" />
+        <EditTextPreference
+            app:key="user_agent"
+            app:defaultValue=""
+            app:title="Custom user agent"
+            app:dialogMessage="Leave empty for the default"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Browsing">
+        <EditTextPreference
+            app:key="homepage"
+            app:defaultValue="https://duckduckgo.com"
+            app:title="Home page"
+            app:useSimpleSummaryProvider="true" />
+        <EditTextPreference
+            app:key="search_template"
+            app:defaultValue="https://duckduckgo.com/?q=%s"
+            app:title="Search engine URL"
+            app:dialogMessage="Use %s where the search words go"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+</PreferenceScreen>
